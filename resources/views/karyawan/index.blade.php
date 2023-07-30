@@ -94,7 +94,6 @@
                                             <th>No. HP</th>
                                             <th>Foto</th>
                                             <th>Departemen</th>
-                                            <th>Cabang</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -118,7 +117,6 @@
 
                                             </td>
                                             <td>{{ $d->nama_dept }}</td>
-                                            <td>{{ $d->kode_cabang }}</td>
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="#" class="edit btn btn-info btn-sm" nik="{{ $d->nik }}">
@@ -260,12 +258,7 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col-12">
-                            <select name="kode_cabang" id="kode_cabang" class="form-select">
-                                <option value="">Cabang</option>
-                                @foreach ($cabang as $d)
-                                <option value="{{ $d->kode_cabang }}">{{ strtoupper($d->nama_cabang) }}</option>
-                                @endforeach
-                            </select>
+
                         </div>
                     </div>
                     <div class="row mt-2">

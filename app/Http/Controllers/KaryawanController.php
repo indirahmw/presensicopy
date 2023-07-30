@@ -28,8 +28,7 @@ class KaryawanController extends Controller
         $karyawan = $query->paginate(10);
 
         $departemen = DB::table('departemen')->get();
-        $cabang = DB::table('cabang')->orderBy('kode_cabang')->get();
-        return view('karyawan.index', compact('karyawan', 'departemen', 'cabang'));
+        return view('karyawan.index', compact('karyawan', 'departemen'));
     }
 
     public function store(Request $request)
@@ -40,7 +39,6 @@ class KaryawanController extends Controller
         $no_hp = $request->no_hp;
         $kode_dept = $request->kode_dept;
         $password = Hash::make('12345');
-        $kode_cabang = $request->kode_cabang;
         if ($request->hasFile('foto')) {
             $foto = $nik . "." . $request->file('foto')->getClientOriginalExtension();
         } else {
@@ -56,7 +54,6 @@ class KaryawanController extends Controller
                 'kode_dept' => $kode_dept,
                 'foto' => $foto,
                 'password' => $password,
-                'kode_cabang' => $kode_cabang
             ];
             $simpan = DB::table('karyawan')->insert($data);
             if ($simpan) {
@@ -78,9 +75,8 @@ class KaryawanController extends Controller
     {
         $nik = $request->nik;
         $departemen = DB::table('departemen')->get();
-        $cabang = DB::table('cabang')->orderBy('kode_cabang')->get();
         $karyawan = DB::table('karyawan')->where('nik', $nik)->first();
-        return view('karyawan.edit', compact('departemen', 'karyawan', 'cabang'));
+        return view('karyawan.edit', compact('departemen', 'karyawan'));
     }
 
     public function update($nik, Request $request)
@@ -90,7 +86,6 @@ class KaryawanController extends Controller
         $jabatan = $request->jabatan;
         $no_hp = $request->no_hp;
         $kode_dept = $request->kode_dept;
-        $kode_cabang = $request->kode_cabang;
         $password = Hash::make('12345');
         $old_foto = $request->old_foto;
         if ($request->hasFile('foto')) {
@@ -107,7 +102,6 @@ class KaryawanController extends Controller
                 'kode_dept' => $kode_dept,
                 'foto' => $foto,
                 'password' => $password,
-                'kode_cabang' => $kode_cabang
             ];
             $update = DB::table('karyawan')->where('nik', $nik)->update($data);
             if ($update) {

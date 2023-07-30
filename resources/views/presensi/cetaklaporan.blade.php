@@ -85,15 +85,15 @@
         <table style="width: 100%">
             <tr>
                 <td style="width: 30px">
-                    <img src="{{ asset('assets/img/logopresensi.png') }}" width="70" height="70" alt="">
+                    <img src="{{ asset('assets/img/malang.png') }}" width="70" height="70" alt="">
                 </td>
                 <td>
                     <span id="title">
-                        LAPORAN PRESENSI KARYAWAN<br>
+                        REKAP PRESENSI TPOK<br>
                         PERIODE {{ strtoupper($namabulan[$bulan]) }} {{ $tahun }}<br>
-                        PT. ADAM ADIFA<br>
+                        DISPENDUK CAPIL KOTA MALANG<br>
                     </span>
-                    <span><i>Jln. H. Dahlan No. 75, Kecamatan Sindangrasa, Kabupaten Ciamis</i></span>
+                    <span><i>Jln. Mayjen Sungkono Kel. Arjowinangun Malang Telp. (0341) 751535</i></span>
                 </td>
             </tr>
         </table>
@@ -187,16 +187,16 @@
 
         <table width="100%" style="margin-top:100px">
             <tr>
-                <td colspan="2" style="text-align: right">Tasikmalaya, {{ date('d-m-Y') }}</td>
+                <td colspan="2" style="text-align: right">Malang, {{ date('d-m-Y') }}</td>
             </tr>
             <tr>
                 <td style="text-align: center; vertical-align:bottom" height="100px">
-                    <u>Qiana Aqila</u><br>
-                    <i><b>HRD Manager</b></i>
+                    <u>....</u><br>
+                    <i><b>Kepala ...</b></i>
                 </td>
                 <td style="text-align: center; vertical-align:bottom">
-                    <u>Daffa</u><br>
-                    <i><b>Direktur</b></i>
+                    <u>Ir. Dahliana Lusi Ratnasari, M.M</u><br>
+                    <i><b>Kepala Dinas Dispenduk Capil Kota Malang</b></i>
                 </td>
             </tr>
         </table>
